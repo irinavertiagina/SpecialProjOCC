@@ -39,6 +39,13 @@ public class adminServlet extends HttpServlet {
              DBUtil.addEmployee(role, lname, fname, contact);
         url = "/orderConfirm.jsp"; //test!
         } 
+         else if(todo.equals("addNewVehicle")){
+         url = "/addVehicle.jsp";
+         }
+          else if(todo.equals("vehicleAdded")){
+            // DBUtil.addEmployee(role, lname, fname, contact);
+        url = "/orderConfirm.jsp"; //test!
+        }
         
         
         
@@ -48,6 +55,20 @@ public class adminServlet extends HttpServlet {
 //          request.setAttribute("lastName", lastName);
 //          person.setLastName(lastName);
 //            session.setAttribute("person", person);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
          getServletContext().getRequestDispatcher(url)
