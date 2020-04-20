@@ -47,7 +47,7 @@ public class DBUtil {
             Connection connection = DriverManager.getConnection(dbURL, user, password);
            Statement statement = connection.createStatement();
 
-            String preparedQuery = "INSERT INTO `testtable` VALUES (2,2,2);"; 
+            String preparedQuery = "INSERT INTO `testtable` VALUES (8,8,8);"; 
             PreparedStatement ps = (PreparedStatement) connection.prepareStatement(preparedQuery);
           //ps.setString(1, "test");
            ps.executeUpdate();
@@ -98,8 +98,6 @@ public class DBUtil {
           //ps.setString(1, "test");
            ps.executeUpdate();
                      connection.close();
-
-
         } catch (Exception e) {
             System.out.println("ERROR! " + e);
         }
@@ -108,6 +106,36 @@ public class DBUtil {
          
          
          
+                  
+                  
+                  
+                  
+                     public static void addVehicle() {
+         
+        try {
+            String dbURL = "jdbc:mysql://localhost:3306/db";
+            String user = "root";
+            String password = "";
+
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection connection = DriverManager.getConnection(dbURL, user, password);
+           Statement statement = connection.createStatement();
+
+            String preparedQuery = "INSERT INTO `vehicle`(`vehicle_service_date`, `vehicle_info`, `vehicle_status`, `driver_id`) VALUES ('0000-00-00', 'specs', '2', 1)"; 
+            PreparedStatement ps = (PreparedStatement) connection.prepareStatement(preparedQuery);
+          //ps.setString(1, "test");
+           ps.executeUpdate();
+                     connection.close();
+
+
+        } catch (Exception e) {
+            System.out.println("ERROR! " + e);
+        }
+        
+        }
+                  
+                  
+                  
          
          
 }

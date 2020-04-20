@@ -10,9 +10,18 @@
     <body>
        <p>Add new vehicle</p>
         <form action="adminServlet" method="post">    
-            <input type="submit" value="Add vehicle"> 
-            
+             
+            <p>Vehicle information
+                <input type="text" name="info"   >    
+            </p>
+            <p>Service date
+                <input type="text" name="serviceDate"   >    
+            </p>
+            <p>Assign driver
+                <input type="text" name="driverID"   >    
+            </p>
             <input type="hidden" name="todo" value="vehicleAdded">  
+            <input type="submit" value="Add vehicle"> 
         </form>
     </body>
 </html>

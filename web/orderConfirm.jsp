@@ -10,7 +10,8 @@
         <title>JSP Page</title>
     </head>
       <body>
-        <h1>Thank you your order have been placed</h1>
+          <% String id = (String)request.getAttribute("id"); %>
+        <h1>Thank you <%=id%> have been placed/added</h1>
         <p>check status</p>
          <h1>History</h1>
                
