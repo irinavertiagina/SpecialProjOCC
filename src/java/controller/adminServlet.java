@@ -26,24 +26,33 @@ public class adminServlet extends HttpServlet {
          String role = request.getParameter("role");
          String lname= request.getParameter("lastName");
          String fname = request.getParameter("firstName");
-          String contact = request.getParameter("contact");
+         String contact = request.getParameter("contact");
+         
+         
+         
+          String info= request.getParameter("info");
+          String date= request.getParameter("serviceDate");
+          String id= request.getParameter("driverID");
         String url = "";
         if(todo.equals(null)){
         url = "/error.jsp";
         }
+        //add workers
         else if(todo.equals("addNewEmployee")){
-        url = "/addEmployee.jsp";
-         
+        url = "/addEmployee.jsp";         
         } 
          else if(todo.equals("empAdded")){
              DBUtil.addEmployee(role, lname, fname, contact);
         url = "/orderConfirm.jsp"; //test!
         } 
+         //add vehicles
+         
+         
          else if(todo.equals("addNewVehicle")){
          url = "/addVehicle.jsp";
          }
           else if(todo.equals("vehicleAdded")){
-             DBUtil.addVehicle();
+             DBUtil.addVehicle(info, date, id);
         url = "/orderConfirm.jsp"; //test!
         }
         

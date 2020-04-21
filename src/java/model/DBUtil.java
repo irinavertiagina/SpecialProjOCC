@@ -36,7 +36,7 @@ public class DBUtil {
         
         
         
-         public static void placeOrder() { 
+         public static void placeOrder(String date, String cargo, String location, String dest) { 
  try {
             String dbURL = "jdbc:mysql://localhost:3306/db";
             String user = "root";
@@ -49,7 +49,7 @@ public class DBUtil {
             
           
          //String preparedQuery = "INSERT INTO `testtable`(`first`, `second`, `third`) VALUES (1,2,3)";//test!
-String preparedQuery = "INSERT INTO `order`(`driver_id`, `customer_id`, `order_cargo`, `order_start_date`,`order_destination`, `order_location`    ) VALUES (1, 1, 'cardo', 'start', 'sestinar', 'loc')";
+String preparedQuery = "INSERT INTO `order`(`driver_id`, `customer_id`, `order_cargo`, `order_start_date`,`order_destination`, `order_location`    ) VALUES (1, 1, '"+cargo+"', '"+date+"', '"+dest+"', '"+location+"')";
 
             
             PreparedStatement ps = (PreparedStatement) connection.prepareStatement(preparedQuery);
@@ -112,7 +112,7 @@ String preparedQuery = "INSERT INTO `order`(`driver_id`, `customer_id`, `order_c
                   
                   
                   
-                     public static void addVehicle() {
+                     public static void addVehicle(String info, String date, String id) {
          
         try {
             String dbURL = "jdbc:mysql://localhost:3306/db";
@@ -123,7 +123,7 @@ String preparedQuery = "INSERT INTO `order`(`driver_id`, `customer_id`, `order_c
             Connection connection = DriverManager.getConnection(dbURL, user, password);
            Statement statement = connection.createStatement();
 
-            String preparedQuery = "INSERT INTO `vehicle`(`vehicle_id`,`vehicle_service_date`, `vehicle_info`, `vehicle_status`, `driver_id`) VALUES (3, 0000-00-00, 'info', 0, 1)"; 
+            String preparedQuery = "INSERT INTO `vehicle`(`vehicle_service_date`, `vehicle_info`, `vehicle_status`, `driver_id`) VALUES ( '"+date+"', '"+info+"', 0, " +id+")"; 
             PreparedStatement ps = (PreparedStatement) connection.prepareStatement(preparedQuery);
  
            ps.executeUpdate();

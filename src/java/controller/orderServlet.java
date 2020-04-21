@@ -23,7 +23,12 @@ public class orderServlet extends HttpServlet {
           HttpSession session = request.getSession();
          String lastName = request.getParameter("lastName");
          String role = request.getParameter("role");
-                
+            
+         
+        String date = request.getParameter("date");
+        String cargo = request.getParameter("cargo");
+        String location = request.getParameter("location");
+        String dest = request.getParameter("destination");
                  
         
         Person person = (Person) session.getAttribute("person");
@@ -47,10 +52,12 @@ public class orderServlet extends HttpServlet {
         
        
        //place new order
+       
+        
      
         if(todo.equals("placeOrder")){
                 
-        DBUtil.placeOrder();
+        DBUtil.placeOrder(date, cargo, location, dest);
          this
                  .getServletContext()
                  .getRequestDispatcher("/placeNewOrder.jsp")
