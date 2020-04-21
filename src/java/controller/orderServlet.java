@@ -58,8 +58,10 @@ public class orderServlet extends HttpServlet {
         }
         ///////////////////
         
-        //confirm order
+        //confirm order placed succesfull
         if(todo.equals("orderPlaced")){
+                   
+
          this
                  .getServletContext()
                  .getRequestDispatcher("/orderConfirm.jsp")

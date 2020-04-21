@@ -43,7 +43,7 @@ public class adminServlet extends HttpServlet {
          url = "/addVehicle.jsp";
          }
           else if(todo.equals("vehicleAdded")){
-             DBUtil.placeOrder();
+             DBUtil.addVehicle();
         url = "/orderConfirm.jsp"; //test!
         }
         

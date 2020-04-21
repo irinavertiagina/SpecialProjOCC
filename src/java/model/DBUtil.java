@@ -36,9 +36,8 @@ public class DBUtil {
         
         
         
-         public static void placeOrder() {
-         
-        try {
+         public static void placeOrder() { 
+ try {
             String dbURL = "jdbc:mysql://localhost:3306/db";
             String user = "root";
             String password = "";
@@ -46,14 +45,17 @@ public class DBUtil {
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection(dbURL, user, password);
            Statement statement = connection.createStatement();
+      
+            
+          
+         //String preparedQuery = "INSERT INTO `testtable`(`first`, `second`, `third`) VALUES (1,2,3)";//test!
+String preparedQuery = "INSERT INTO `order`(`driver_id`, `customer_id`   ) VALUES (1, 1)";
 
-            String preparedQuery = "INSERT INTO `testtable` VALUES (8,8,8);"; 
+            
             PreparedStatement ps = (PreparedStatement) connection.prepareStatement(preparedQuery);
           //ps.setString(1, "test");
            ps.executeUpdate();
                      connection.close();
-
-
         } catch (Exception e) {
             System.out.println("ERROR! " + e);
         }
@@ -121,14 +123,12 @@ public class DBUtil {
             Connection connection = DriverManager.getConnection(dbURL, user, password);
            Statement statement = connection.createStatement();
 
-            String preparedQuery = "INSERT INTO `vehicle`(`vehicle_service_date`, `vehicle_info`, `vehicle_status`, `driver_id`) VALUES ('0000-00-00', 'specs', '2', 1)"; 
+            String preparedQuery = "INSERT INTO `vehicle`(`vehicle_id`,`vehicle_service_date`, `vehicle_info`, `vehicle_status`, `driver_id`) VALUES (3, 0000-00-00, 'info', 0, 1)"; 
             PreparedStatement ps = (PreparedStatement) connection.prepareStatement(preparedQuery);
-          //ps.setString(1, "test");
+ 
            ps.executeUpdate();
                      connection.close();
-
-
-        } catch (Exception e) {
+            } catch (Exception e) {
             System.out.println("ERROR! " + e);
         }
         
