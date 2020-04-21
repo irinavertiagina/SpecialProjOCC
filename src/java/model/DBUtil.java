@@ -49,7 +49,7 @@ public class DBUtil {
             
           
          //String preparedQuery = "INSERT INTO `testtable`(`first`, `second`, `third`) VALUES (1,2,3)";//test!
-String preparedQuery = "INSERT INTO `order`(`driver_id`, `customer_id`   ) VALUES (1, 1)";
+String preparedQuery = "INSERT INTO `order`(`driver_id`, `customer_id`, `order_cargo`, `order_start_date`,`order_destination`, `order_location`    ) VALUES (1, 1, 'cardo', 'start', 'sestinar', 'loc')";
 
             
             PreparedStatement ps = (PreparedStatement) connection.prepareStatement(preparedQuery);
