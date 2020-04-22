@@ -8,16 +8,26 @@ public class Vehicle {
    private int status;
    private String serviceDate;
    private String info;
+   private String driverName;
 
     public Vehicle() {
     }
 
-    public Vehicle(int id, int driverId, int status, String serviceDate, String info) {
+    public Vehicle(int id, int driverId, int status, String serviceDate, String info, String driverName) {
         this.id = id;
         this.driverId = driverId;
         this.status = status;
         this.serviceDate = serviceDate;
         this.info = info;
+        this.driverName = driverName;
+    }
+
+    public String getDriverName() {
+        return driverName;
+    }
+
+    public void setDriverName(String driverName) {
+        this.driverName = driverName;
     }
 
    

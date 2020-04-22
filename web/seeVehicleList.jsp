@@ -12,7 +12,7 @@
     <body>
       <%
           
-                String driverName = (String) request.getAttribute("driverName");
+                
                 ArrayList<Vehicle> vList = (ArrayList<Vehicle>) request.getAttribute("vList");
                 for (Vehicle i : vList) {
                     int id = i.getId();
@@ -20,6 +20,7 @@
                     int status = i.getStatus();
                     String service = i.getServiceDate();
                     String info = i.getInfo();
+                    String driverName = i.getDriverName();
              %>  
                 <p>ID: <%=id%> 
                    STATUS: <%=status%> 

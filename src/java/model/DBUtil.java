@@ -42,11 +42,13 @@ public class DBUtil {
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection = DriverManager.getConnection(dbURL, user, password);
             Statement statement = connection.createStatement();
-            ResultSet result = statement.executeQuery("SELECT * FROM `vehicle`");
+            ResultSet result = statement.executeQuery("SELECT vehicle.vehicle_id, vehicle.vehicle_service_date, vehicle.vehicle_info, vehicle.vehicle_status, vehicle.driver_id, driver.driver_last_name\n" +
+"FROM vehicle INNER JOIN driver ON vehicle.driver_id = driver.driver_id");
+            
 
             while (result.next()) {
                 Vehicle i = new Vehicle(result.getInt("vehicle_id"), result.getInt("driver_id"), result.getInt("vehicle_status"),
-                result.getString("vehicle_service_date"), result.getString("vehicle_info"));
+                result.getString("vehicle_service_date"), result.getString("vehicle_info"), result.getString("driver_last_name"));
 
                 list.add(i);
             }
