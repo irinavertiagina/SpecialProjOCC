@@ -1,8 +1,10 @@
  
 package model;
 
+import java.io.Serializable;
+
  
-public class Vehicle {
+public class Vehicle implements Serializable{
    private int id;
    private int driverId;
    private int status;
@@ -10,7 +12,7 @@ public class Vehicle {
    private String info;
    private String driverName;
 
-    public Vehicle() {
+    public Vehicle () {
     }
 
     public Vehicle(int id, int driverId, int status, String serviceDate, String info, String driverName) {
@@ -30,10 +32,6 @@ public class Vehicle {
         this.driverName = driverName;
     }
 
-   
-   
-   
-   
    
     public int getId() {
         return id;

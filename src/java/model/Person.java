@@ -1,12 +1,21 @@
 
 package model;
 
+import java.io.Serializable;
+
  
-public class Person {
+public class Person implements Serializable{
     String lastName, firstName , password;
     int id;
 
     public Person(){}
+
+    public Person(int id, String lastName, String firstName) {
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.id = id;
+    }
+    
     
     public String getLastName() {
         return lastName;

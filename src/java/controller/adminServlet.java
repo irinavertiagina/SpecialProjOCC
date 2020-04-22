@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.DBUtil;
+import model.Person;
 import model.Vehicle;
 
  
@@ -67,7 +68,21 @@ public class adminServlet extends HttpServlet {
           url = "/seeVehicleList.jsp";
           }
         
-         
+         //see all workers
+          else if(todo.equals("seeEmployeeList")){
+              
+              if(role.equals("admin")){
+                   url = "/seeEmployeeList.jsp";
+              } else if(role.equals("manager")){
+                   url = "/seeEmployeeList.jsp";
+              }else if(role.equals("driver")){
+                   url = "/seeEmployeeList.jsp";
+              }
+            
+              ArrayList<Person> empList = DBUtil.seeEmployeeList();
+              request.setAttribute("empList", empList);     
+          }
+        
              
 //         request.setAttribute("role", role);
 //          request.setAttribute("lastName", lastName);

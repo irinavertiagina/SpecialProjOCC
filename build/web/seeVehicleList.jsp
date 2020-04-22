@@ -18,13 +18,14 @@
                     int id = i.getId();
                     int driver = i.getDriverId();
                     int status = i.getStatus();
+                    //String status = i.getStatus();
                     String service = i.getServiceDate();
                     String info = i.getInfo();
                     String driverName = i.getDriverName();
              %>  
                 <p>ID: <%=id%> 
                    STATUS: <%=status%> 
-                   DRIVER : <%=driverName%>
+                  DRIVER : <%=driverName%>
                    INFO: <%=info%> 
                    NEXT SERVICE DATE: <%=service%>  </p>
             <% }%>

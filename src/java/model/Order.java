@@ -5,8 +5,16 @@ import java.io.Serializable;
 
  
 public class Order implements Serializable {
-    int order_id, customer_id, vehicle_id, order_status, manager_id;
-    String order_cargo,order_start_date, order_finish_date, order_location, order_destination;
+    private int order_id; 
+    private int customer_id;
+    private int vehicle_id;
+    private int order_status;
+    private int manager_id;
+    private String order_cargo; 
+    private String order_start_date;
+    private String order_finish_date;
+    private String order_location;
+    private String order_destination;
 
     public Order() {
     }

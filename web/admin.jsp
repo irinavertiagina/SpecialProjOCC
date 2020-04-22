@@ -8,23 +8,26 @@
         <title>ADMIN Page</title>
     </head>
     <body>
-        <h1>Hello admin</h1>
+        <h1>Admin ${lastName}</h1>
 
-        <p>name: ${lastName}</p> 
+        <a href ="adminServlet?todo=addNewEmployee">Add new worker</a>
+        <p>
+            <a href ="adminServlet?todo=addNewVehicle">Add new vehicle</a> 
+        <p>
+            <a href ="adminServlet?todo=seeVehicleList"> See vehicle list</a>
+        <p>
+             
 
-        <p>Add new employee</p>
         <form action="adminServlet" method="post">    
-            <input type="hidden" name="todo" value="addNewEmployee">  
-            <input type="submit" value="Add new employee"> 
-        </form>  
+            <select name="role">
+                <option value="admin">admin</option>
+                <option value="manager">manager</option>
+                <option value="driver">driver</option>
+            </select>
+            <input type="hidden" name="todo" value="seeEmployeeList">   
+            <input type="submit" value="See workers list"> 
 
-        <p>Add new vehicle</p>
-        <form action="adminServlet" method="post">    
-            <input type="submit" value="Add vehicle"> 
-            <input type="hidden" name="todo" value="addNewVehicle">  
         </form>  
-
-<p> <a href ="adminServlet?todo=seeVehicleList"> See vehicle list</a>
 
     </body>
 </html>
