@@ -121,14 +121,14 @@ String preparedQuery = "INSERT INTO `order`(`driver_id`, `customer_id`, `order_c
             //add admin
             
             else if(role.equals("admin")){
-               preparedQuery =  "INSERT INTO `admin`( `admin_lname`, `admin_fname`, `admin_contact`, `admin_password`) "
+               preparedQuery =  "INSERT INTO `admin`( `admin_last_name`, `admin_first_name`, `admin_contact`, `admin_password`) "
                     + "VALUES ('"+lname+"', '"+fname+"', '"+contact+"', 'pass')"; 
             }
             
             
             //add driver
-            if(role.equals("driver")){  preparedQuery =  "INSERT INTO `driver`( `driver_last_name`, `driver_first_name`, `manager_contact`, `manager_password`) "
-                    + "VALUES ('"+lname+"', '"+fname+"', '"+contact+"', 'pass')"; 
+            if(role.equals("driver")){  preparedQuery =  "INSERT INTO `driver`( `driver_last_name`, `driver_first_name`, `driver_contact`, `manager_id`, `driver_password`) "
+                    + "VALUES ('"+lname+"', '"+fname+"', '"+contact+"', 1, 'pass')"; 
             }
             
             PreparedStatement ps = (PreparedStatement) connection.prepareStatement(preparedQuery);
