@@ -29,18 +29,18 @@ public class orderServlet extends HttpServlet {
         String cargo = request.getParameter("cargo");
         String location = request.getParameter("location");
         String dest = request.getParameter("destination");
-                 
+           
         
         Person person = (Person) session.getAttribute("person");
         if (person == null) {
             person = new Person();
         }
-   //see history
-        String todo = request.getParameter("todo");
-           
-         ArrayList<Order> list = DBUtil.getOrderHistory();
-        request.setAttribute("orderlist", list);
         
+         String todo = request.getParameter("todo");
+         
+   //see history     
+        ArrayList<Order> list = DBUtil.getOrderHistory();
+        request.setAttribute("orderlist", list);
         
          if(todo.equals("history")){
          this
@@ -48,16 +48,9 @@ public class orderServlet extends HttpServlet {
                  .getRequestDispatcher("/history.jsp")
                  .forward(request, response); 
         }
-       ////////////////////////////////// 
-        
-       
+             
        //place new order
-       
-        
-     
         if(todo.equals("placeOrder")){
-                
-        DBUtil.placeOrder(date, cargo, location, dest);
          this
                  .getServletContext()
                  .getRequestDispatcher("/placeNewOrder.jsp")
@@ -67,8 +60,7 @@ public class orderServlet extends HttpServlet {
         
         //confirm order placed succesfull
         if(todo.equals("orderPlaced")){
-                   
-
+            DBUtil.placeOrder(date, cargo, location, dest);        
          this
                  .getServletContext()
                  .getRequestDispatcher("/orderConfirm.jsp")

@@ -9,7 +9,7 @@
     </head>
     <body>
          <form action="orderServlet" method="post">    
-            <input type="hidden" name="todo" value="orderPlaced">  
+           
             <p>Date
             <input type="text" name="date"   >    
             </p>
@@ -21,9 +21,9 @@
             <p>
             <p>Destination
             <input type="text" name="destination"  > 
-            <p>
-            <input type="submit" value="Place order"> 
-             
+            <p>            
+             <input type="hidden" name="todo" value="orderPlaced"> 
+             <input type="submit" value="Place order"> 
         </form> 
      </body>
 </html>
