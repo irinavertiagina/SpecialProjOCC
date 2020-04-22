@@ -24,7 +24,7 @@
             <input type="hidden" name="todo" value="addNewVehicle">  
         </form>  
 
-
+<p> <a href ="adminServlet?todo=seeVehicleList"> See vehicle list</a>
 
     </body>
 </html>
