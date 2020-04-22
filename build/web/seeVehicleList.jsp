@@ -11,6 +11,8 @@
     </head>
     <body>
       <%
+          
+                String driverName = (String) request.getAttribute("driverName");
                 ArrayList<Vehicle> vList = (ArrayList<Vehicle>) request.getAttribute("vList");
                 for (Vehicle i : vList) {
                     int id = i.getId();
@@ -21,6 +23,7 @@
              %>  
                 <p>ID: <%=id%> 
                    STATUS: <%=status%> 
+                   DRIVER : <%=driverName%>
                    INFO: <%=info%> 
                    NEXT SERVICE DATE: <%=service%>  </p>
             <% }%>

@@ -62,6 +62,8 @@ public class adminServlet extends HttpServlet {
           else if(todo.equals("seeVehicleList")){
               ArrayList<Vehicle> vList = DBUtil.seeVehicleList();
               request.setAttribute("vList", vList);
+              String driverName = "testtesttest";
+              request.setAttribute("driverName",driverName);
           url = "/seeVehicleList.jsp";
           }
         
