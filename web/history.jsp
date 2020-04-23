@@ -14,11 +14,14 @@
          <h1>History</h1>
               <%
                 ArrayList<Order> list = (ArrayList<Order>) request.getAttribute("orderlist");
-                for (Order item : list) {
-                    int id = item.getOrder_id();
-                    String cargo = item.getOrder_cargo();
+                for (Order i : list) {
+                    int id = i.getOrder_id();
+                    String cargo = i.getOrder_cargo();
+                    String date = i.getOrder_start_date();
+                    String loc = i.getOrder_location();
+                    String dest = i.getOrder_destination();
              %>  
-                <p><%=id%> <%=cargo%> </p>
+                <p><%=date%> <%=cargo%> <%=loc%> <%=dest%> </p>
             <% }%>
     </body>
 </html>

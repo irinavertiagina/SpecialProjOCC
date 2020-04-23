@@ -20,7 +20,7 @@ public class DBUtil {
             ResultSet result = statement.executeQuery("SELECT * FROM `order`");
 
             while (result.next()) {
-                Order item = new Order(result.getInt("order_id"), result.getString("order_cargo"));
+                Order item = new Order(result.getInt("order_id"), result.getString("order_cargo"), result.getString("order_start_date"),  result.getString("order_location"), result.getString("order_destination")   );
 
                 list.add(item);
             }

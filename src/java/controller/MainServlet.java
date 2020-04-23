@@ -20,7 +20,6 @@ public class MainServlet extends HttpServlet {
           HttpSession session = request.getSession();
          String lastName = request.getParameter("lastName");
          String role = request.getParameter("role");
-                
                  
         
         Person person = (Person) session.getAttribute("person");
@@ -33,8 +32,10 @@ public class MainServlet extends HttpServlet {
         if(role.equals(null)){
         url = "/error.jsp";
         }
+        
         else if(role.equals("admin")){
         url = "/admin.jsp";
+        
         } 
         else if(role.equals("customer")){
         url = "/customer.jsp";

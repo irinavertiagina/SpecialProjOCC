@@ -12,6 +12,8 @@
         <title>Customer page</title>
     </head>
     <body>
+         <%@include file = "header.jsp" %>    
+        <%@include file = "nav.jsp" %>
         <h1>Hello customer!</h1>
           
         <p>name: ${lastName}</p> 
@@ -27,6 +29,7 @@
         </form> 
           
         
-        
+      
+        <%@include file = "footer.jsp" %>
     </body>
 </html>

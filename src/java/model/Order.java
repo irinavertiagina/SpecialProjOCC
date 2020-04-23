@@ -19,12 +19,17 @@ public class Order implements Serializable {
     public Order() {
     }
 
-    
-    
-    public Order(int order_id, String order_cargo) {
+    public Order(int order_id, String order_cargo, String order_start_date, String order_location, String order_destination) {
         this.order_id = order_id;
         this.order_cargo = order_cargo;
+        this.order_start_date = order_start_date;
+        this.order_location = order_location;
+        this.order_destination = order_destination;
     }
+
+    
+    
+   
 
     public int getOrder_id() {
         return order_id;
